@@ -193,3 +193,9 @@ function debounce(func, delay) {
   }; 
 
 } 
+
+function sumArray(arr) { 
+
+  return arr.reduce((total, num) => total + num, 0); 
+
+} 
