@@ -266,3 +266,30 @@ const mapStateToProps = state => ({
 })
 
 export connect(mapStateToProps)(ItemList)
+
+How to dispatch an action on load?
+
+For class component, you can dispatch an action in componentDidMount() method and in render() the method you can verify the data.
+
+/**
+ * Dispatch an action on load
+ */
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchData()
+  }
+
+  render() {
+    return this.props.isLoaded
+      ? <div>{'Loaded'}</div>
+      : <div>{'Not Loaded'}</div>
+  }
+}
+
+const mapStateToProps = (state) => ({
+  isLoaded: state.isLoaded
+})
+
+const mapDispatchToProps = { fetchData }
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
