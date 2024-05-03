@@ -293,3 +293,25 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = { fetchData }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+How to reset the state in Redux?
+
+To reset the state in Redux, you can define a new action and a corresponding reducer that returns the initial state of your application.
+
+Here’s an example:
+
+// Define a reset action type
+const RESET_STATE = 'RESET_STATE';
+
+// Define an action creator function for the reset action
+export const resetState = () => ({
+  type: RESET_STATE
+});
+
+// Define a reducer that handles the reset action
+const rootReducer = (state, action) => {
+  if (action.type === RESET_STATE) {
+    return initialState; // replace initialState with your initial state object
+  }
+  return state;
+};
