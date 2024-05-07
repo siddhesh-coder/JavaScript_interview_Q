@@ -315,3 +315,23 @@ const rootReducer = (state, action) => {
   }
   return state;
 };
+
+Write a JavaScript function to check if a given number is prime. 
+
+Interviewers can analyze the candidate’s knowledge of JavaScript algorithms and mathematical concepts. They expect the candidate to translate a mathematical concept into functional code.  
+
+Sample answer: To check if a given number is prime, loop from 2 to the square root of the number. If any integer evenly divides it, the number is not prime. 
+
+function isPrime(num) { 
+
+  if (num <= 1) return false; 
+
+  for (let i = 2; i <= Math.sqrt(num); i++) { 
+
+    if (num % i === 0) return false; 
+
+  } 
+
+  return true; 
+
+} 
