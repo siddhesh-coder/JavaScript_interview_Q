@@ -335,3 +335,23 @@ function isPrime(num) {
   return true; 
 
 } 
+
+Write a function that accepts a number and returns its factorial (e.g., factorial of 5 is 5 x 4 x 3 x 2 x 1). 
+
+By presenting this question in the interview, hiring managers can assess the capability of the candidate to handle numeric calculations. They can also determine how well the interviewee can pay attention to handling edge cases, if applicable. 
+
+Sample answer: 
+
+function factorial(num) { 
+
+  if (num === 0 || num === 1) { 
+
+    return 1; 
+
+  } else { 
+
+    return num * factorial(num – 1); 
+
+  } 
+
+} 
