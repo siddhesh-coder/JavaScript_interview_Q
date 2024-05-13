@@ -355,3 +355,19 @@ function factorial(num) {
   } 
 
 } 
+
+What does the .bind() method do?
+The .bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called. This is tricky because it involves understanding how the this keyword works and how it can be explicitly set.
+
+const obj = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+};
+
+const unboundGetX = obj.getX;
+console.log(unboundGetX());  // Output: undefined
+
+const boundGetX = unboundGetX.bind(obj);
+console.log(boundGetX());  // Output: 42
