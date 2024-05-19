@@ -371,3 +371,22 @@ console.log(unboundGetX());  // Output: undefined
 
 const boundGetX = unboundGetX.bind(obj);
 console.log(boundGetX());  // Output: 42
+
+//If you have two strings, how can you check if they are anagram?
+
+var stringFirst = "Dormitory";
+var stringSecond = "Dirty room";
+
+isAnagram(stringFirst, stringSecond); // check if true
+
+function isAnagram(stringFirst, stringSecond) {
+// Changing both words to lowercase to remove case insensitivity
+var x = stringFirst.toLowerCase();
+var y = stringSecond.toLowerCase();
+
+// Sorting both the strings and joining the output array to a string and then comparing the results
+x = x.split("").sort().join("");
+y = y.split("").sort().join("");
+
+return x === y;
+}
