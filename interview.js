@@ -421,3 +421,18 @@ let animal = {
 Object.freeze(person);
 person.name = "Lima"; //TypeError: Cannot assign to read only property 'name' of object
 console.log(person);
+
+//Context and “this” Manipulation
+const obj = {
+   value: 42,
+   getValue: function() {
+       return this.value;
+   }
+};
+
+const anotherObj = {
+   value: 99
+};
+
+console.log(obj.getValue());
+console.log(obj.getValue.call(anotherObj));
